@@ -1,0 +1,42 @@
+baseURL = 'https://reservefood.org'
+languageCode = 'en-us'
+title = 'Reserve Food'
+
+[params]
+description = 'Long-life nutrition infrastructure'
+
+[menu]
+[[menu.main]]
+name = 'About'
+url = '/about/'
+weight = 10
+
+[[menu.main]]
+name = 'Product'
+url = '/product/'
+weight = 20
+
+[[menu.main]]
+name = 'Programs'
+url = '/programs/'
+weight = 30
+
+[[menu.main]]
+name = 'Governments & NGOs'
+url = '/governments-ngos/'
+weight = 40
+
+[[menu.main]]
+name = 'Investors'
+url = '/investors/'
+weight = 50
+
+[[menu.main]]
+name = 'FAQ'
+url = '/faq/'
+weight = 60
+
+[[menu.main]]
+name = 'Contact'
+url = '/contact/'
+weight = 70
