@@ -5,7 +5,9 @@
     --text-light: #555;
     --bg: #fff;
     --border: #ddd;
-    --accent: #1a1a1a;
+    --accent: #0f766e;
+    --accent-contrast: #fff;
+    --focus: #0f766e;
     --max-width: 760px;
 }
 
@@ -26,9 +28,16 @@ body {
     line-height: 1.6;
     color: var(--text);
     background: var(--bg);
+    margin: 0;
+    padding: 2rem 0;
+}
+
+header,
+main,
+footer {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: 0 1rem;
 }
 
 /* =============================
@@ -50,11 +59,19 @@ nav {
 }
 
 .site-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 1.25rem;
     font-weight: 700;
     text-decoration: none;
     color: var(--text);
     letter-spacing: -0.01em;
+}
+
+.site-mark {
+    display: inline-flex;
+    color: var(--accent);
 }
 
 /* Hamburger button — hidden on desktop */
@@ -152,6 +169,35 @@ a {
     color: var(--text);
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+.hero-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--accent-contrast);
+    background: var(--accent);
+    padding: 0.65rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+}
+
+.button.button-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
 /* =============================
    Lists
    ============================= */
@@ -191,7 +237,7 @@ footer {
 footer p {
     font-size: 0.875rem;
     color: var(--text-light);
-    margin: 0;
+    margin: 0.25rem 0 0;
 }
 
 /* =============================
@@ -200,7 +246,7 @@ footer p {
 
 @media (max-width: 640px) {
     body {
-        padding: 1.25rem 1rem;
+        padding: 1.25rem 0;
     }
 
     header {
@@ -241,6 +287,12 @@ footer p {
         border-bottom: 1px solid var(--border);
     }
 
+    /* Stack homepage CTA buttons on small screens */
+    .hero-actions .button {
+        width: 100%;
+        text-align: center;
+    }
+
     .nav-menu li:last-child a {
         border-bottom: none;
     }
@@ -259,6 +311,18 @@ footer p {
 
     main {
         margin-bottom: 3rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f0f2f5;
+        --text-light: #b5bec8;
+        --bg: #0f1115;
+        --border: #2b313a;
+        --accent: #5eead4;
+        --accent-contrast: #10231f;
+        --focus: #99f6e4;
     }
 }
 

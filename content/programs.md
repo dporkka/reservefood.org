@@ -1,5 +1,6 @@
 ---
 title: "Programs"
+description: "Explore Reserve Food programs for household preparedness, institutional reserves, and community access."
 ---
 
 Reserve Food operates across multiple programs so nutrition reserves can remain usable, rotated, and accessible rather than forgotten or wasted.

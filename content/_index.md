@@ -1,5 +1,6 @@
 ---
 title: ""
+description: "Reserve Food builds long-life, shelf-stable nutrition for households, institutions, and emergency preparedness."
 ---
 
 ## Long-life nutrition you can depend on.

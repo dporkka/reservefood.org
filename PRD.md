@@ -64,24 +64,24 @@ The site is a minimal Hugo static site with the following pages:
 
 ### 5.1 Site & Infrastructure
 
-- [ ] Configure sitemap generation in Hugo (`hugo.toml`)
-- [ ] Add `robots.txt`
-- [ ] Set up canonical URLs and Open Graph / Twitter Card meta tags per page
-- [ ] Add per-page meta descriptions in content front matter
-- [ ] Integrate web analytics (privacy-friendly, e.g., Plausible or Fathom)
-- [ ] Configure CI/CD pipeline for automated deployment
-- [ ] Add 404 custom error page
+- [x] Configure sitemap generation in Hugo (`hugo.toml`)
+- [x] Add `robots.txt`
+- [x] Set up canonical URLs and Open Graph / Twitter Card meta tags per page
+- [x] Add per-page meta descriptions in content front matter
+- [x] Integrate web analytics (privacy-friendly, e.g., Plausible or Fathom)
+- [x] Configure CI/CD pipeline for automated deployment
+- [x] Add 404 custom error page
 
 ### 5.2 Design & UX
 
 - [x] Responsive layout with mobile hamburger navigation
-- [ ] Consistent visual identity (logo, color palette, typography scale)
-- [ ] Add brand logo / wordmark to header
-- [ ] Homepage hero section with clear call-to-action
+- [x] Consistent visual identity (logo, color palette, typography scale)
+- [x] Add brand logo / wordmark to header
+- [x] Homepage hero section with clear call-to-action
 - [ ] Product photography or illustration
-- [ ] Improve visual hierarchy on long-form pages
+- [x] Improve visual hierarchy on long-form pages
 - [ ] Accessibility audit (WCAG 2.1 AA compliance)
-- [ ] Dark mode support
+- [x] Dark mode support
 
 ### 5.3 Content
 
@@ -90,7 +90,7 @@ The site is a minimal Hugo static site with the following pages:
 - [ ] Add case studies or testimonials (once available)
 - [ ] Write blog / news section for updates, partnerships, and press
 - [ ] Add press kit page
-- [ ] Add terms of service and privacy policy pages
+- [x] Add terms of service and privacy policy pages
 - [ ] Localization / translation for key markets
 
 ### 5.4 E-Commerce & Sales

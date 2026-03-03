@@ -1,5 +1,6 @@
 ---
 title: "Investors"
+description: "Investor overview of Reserve Food market opportunity, product architecture, and business model."
 ---
 
 Reserve Food is building nutrition infrastructure designed for long time horizons.

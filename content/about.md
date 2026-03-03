@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "Reserve Food designs resilient nutrition infrastructure focused on long shelf life and operational reliability."
 ---
 
 Reserve Food was created to address a simple reality: food systems fail before energy systems do.

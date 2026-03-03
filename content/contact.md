@@ -1,5 +1,6 @@
 ---
 title: "Contact"
+description: "Contact Reserve Food for partnerships, institutional inquiries, and procurement discussions."
 ---
 
 For general inquiries, partnerships, or institutional requests:

@@ -1,5 +1,6 @@
 ---
 title: "Governments & NGOs"
+description: "Procurement-focused overview for governments and NGOs seeking shelf-stable nutrition reserves."
 ---
 
 ## Shelf-stable nutrition for reserves and deployment

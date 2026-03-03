@@ -2,8 +2,16 @@ baseURL = 'https://reservefood.org'
 languageCode = 'en-us'
 title = 'Reserve Food'
 
+[sitemap]
+changefreq = 'weekly'
+priority = 0.5
+filename = 'sitemap.xml'
+
 [params]
 description = 'Long-life nutrition infrastructure'
+
+[params.analytics]
+plausibleDomain = 'reservefood.org'
 
 [menu]
 [[menu.main]]

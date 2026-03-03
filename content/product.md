@@ -1,5 +1,6 @@
 ---
 title: "Product"
+description: "Learn the Reserve Food Bar specifications, shelf life, and design principles for dependable daily or emergency use."
 ---
 
 ## The Reserve Food Bar
