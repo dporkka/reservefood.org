@@ -1,5 +1,6 @@
 ---
 title: "FAQ"
+description: "Answers to common questions about Reserve Food shelf life, storage, and use cases."
 ---
 
 ## How long does it last?

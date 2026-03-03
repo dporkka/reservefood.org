@@ -1,7 +1,12 @@
 <header>
     <nav id="main-nav">
-        <a href="/" class="site-title">{{ .Site.Title }}</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false" onclick="toggleNav(this)">
+        <a href="/" class="site-title">
+            <span class="site-mark" aria-hidden="true">
+                <svg viewBox="0 0 8 8" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><rect width="8" height="8" fill="currentColor"></rect></svg>
+            </span>
+            <span>{{ .Site.Title }}</span>
+        </a>
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
             <svg class="icon-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
@@ -13,11 +18,3 @@
         </ul>
     </nav>
 </header>
-<script>
-function toggleNav(btn) {
-    var nav = document.getElementById('main-nav');
-    var expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('nav-open', !expanded);
-}
-</script>

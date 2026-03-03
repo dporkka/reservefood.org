@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ $description := .Params.description | default .Description | default .Site.Params.description }}
     <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="description" content="{{ $description }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="referrer" content="no-referrer">
     <!-- Open Graph -->
     <meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:description" content="{{ $description }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
+    <meta name="twitter:description" content="{{ $description }}">
     <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js" defer></script>
+    {{ with .Site.Params.analytics.plausibleDomain }}
+    <script defer data-domain="{{ . }}" src="/js/analytics.js"></script>
+    {{ end }}
 </head>
 <body>
     {{ partial "header.html" . }}
