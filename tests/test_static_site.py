@@ -33,7 +33,7 @@ class References(HTMLParser):
 
 def build(destination, base_url):
     subprocess.run([HUGO, "--source", str(ROOT), "--destination", str(destination),
-                    "--baseURL", base_url, "--minify"], check=True)
+                    "--baseURL", base_url, "--minify", "--panicOnWarning"], check=True)
 
 
 @unittest.skipUnless(HUGO, "Set HUGO_BIN or install Hugo")

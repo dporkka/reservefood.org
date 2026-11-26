@@ -27,7 +27,7 @@ The site provides information about Reserve Food's products, programs, investor 
 
 ### Prerequisites
 
-- [Hugo](https://gohugo.io/installation/) (extended version recommended)
+- [Hugo 0.170.0](https://gohugo.io/installation/) (standard build; no Extended/Sass requirement)
 
 ### Running locally
 
@@ -43,7 +43,9 @@ The site will be available at `http://localhost:1313`.
 hugo
 ```
 
-Output is written to the `public/` directory.
+Output is written to the `public/` directory. The existing GitHub Pages
+workflow builds only this generated directory with the same pinned Hugo
+version. Do not upload the source repository as a static-site artifact.
 
 ---
 
