@@ -1,6 +1,6 @@
 <header>
     <nav id="main-nav">
-        <a href="/" class="site-title">
+        <a href="{{ site.Home.RelPermalink }}" class="site-title">
             <span class="site-mark" aria-hidden="true">
                 <svg viewBox="0 0 8 8" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><rect width="8" height="8" fill="currentColor"></rect></svg>
             </span>
@@ -13,7 +13,7 @@
         <ul class="nav-menu" id="nav-menu">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-            <li><a href="{{ .URL }}"{{ if eq $currentPage.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+            <li><a href="{{ .URL }}"{{ if $currentPage.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
             {{ end }}
         </ul>
     </nav>

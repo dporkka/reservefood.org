@@ -43,4 +43,4 @@ Reserve Food products are designed to reduce the operational burden of feeding p
 
 We support institutional procurement through contract pricing, framework agreements, and recurring replenishment programs.
 
-For sampling or procurement discussions, please [contact us](/contact/).
+For sampling or procurement discussions, please [contact us]({{< relref "contact.md" >}}).

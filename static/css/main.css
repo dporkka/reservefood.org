@@ -253,15 +253,15 @@ footer p {
         margin-bottom: 2rem;
     }
 
-    /* Show hamburger, hide desktop nav */
-    .nav-toggle {
+    /* Collapse only after the working toggle has been initialized. */
+    .nav-enhanced .nav-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .nav-menu {
-        display: none;
+        display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         gap: 0;
@@ -271,9 +271,8 @@ footer p {
         border-top: 1px solid var(--border);
     }
 
-    /* Show nav when open */
-    .nav-open .nav-menu {
-        display: flex;
+    .nav-enhanced:not(.nav-open) .nav-menu {
+        display: none;
     }
 
     .nav-menu li {

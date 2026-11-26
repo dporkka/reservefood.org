@@ -9,4 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.setAttribute("aria-expanded", String(!expanded));
     nav.classList.toggle("nav-open", !expanded);
   });
+
+  nav.classList.add("nav-enhanced");
 });

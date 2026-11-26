@@ -102,3 +102,22 @@ See [PRD.md](PRD.md) for the product roadmap and remaining tasks.
 ## License
 
 &copy; Reserve Food. All rights reserved.
+
+## Portability checks
+
+The site can be served at a domain root or a nested deployment prefix. Build
+and test with the canonical base URL set to the deployment location:
+
+```sh
+hugo --minify --baseURL https://example.org/reserve/
+python3 -m unittest discover -s tests -v
+```
+
+The tests build both root and subpath variants, resolve local links and assets,
+and check the sitemap URL and active navigation. The mobile navigation browser
+test is optional and uses developer-installed Playwright and Chromium; the
+rest of the checks require only Hugo and the Python standard library.
+Use `HUGO_BIN` to specify Hugo and set `CHROMIUM_BIN` to an installed
+Chromium executable to enable the browser check.
+The menu remains visible without JavaScript; JavaScript enhances it with a
+collapsible mobile toggle.
