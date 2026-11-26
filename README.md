@@ -143,8 +143,21 @@ and 1280 CSS pixels in both light and dark modes, checks keyboard skip
 navigation, mobile toggling with and without JavaScript, reflow, and primary
 button contrast. The non-browser checks require only Hugo and the Python
 standard library.
-Use `HUGO_BIN` to specify Hugo and set `CHROMIUM_BIN` to an installed
-Chromium executable to enable the browser check.
+For the optional browser check, install Python Playwright in a virtual
+environment and use an existing compatible Chromium executable (or install
+Chromium using `python -m playwright install chromium`). For example:
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install playwright
+HUGO_BIN=/path/to/hugo CHROMIUM_BIN=/path/to/chromium \
+  python -m unittest discover -s tests -v
+```
+
+Replace the executable paths with the actual local paths. Confirm the browser
+check reports `ok`, not `skipped`. These are optional test-only tools, not
+site build or runtime dependencies.
 The menu remains visible without JavaScript; JavaScript enhances it with a
 collapsible mobile toggle.
 
