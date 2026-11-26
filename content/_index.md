@@ -3,7 +3,7 @@ title: ""
 description: "Reserve Food builds long-life, shelf-stable nutrition for households, institutions, and emergency preparedness."
 ---
 
-## Long-life nutrition you can depend on.
+# Long-life nutrition you can depend on.
 
 Reserve Food builds shelf-stable nutrition designed for daily use and long-term storage—without refrigeration and without fragile supply chains.
 
@@ -14,7 +14,7 @@ Our products are engineered to remain safe, palatable, and nutritionally useful 
 
 ---
 
-### Why this exists
+## Why this exists
 
 Modern food systems depend on just-in-time logistics, refrigeration, and continuous availability. When those systems are disrupted, access to food becomes uncertain even when supply exists.
 
@@ -24,9 +24,9 @@ We design nutrition that prioritizes stability, predictability, and operational 
 
 ---
 
-### What we make
+## What we make
 
-#### The Reserve Food Bar
+### The Reserve Food Bar
 
 A compact nutrition bar designed for repeat daily consumption or long-term reserve storage.
 
@@ -39,7 +39,7 @@ A compact nutrition bar designed for repeat daily consumption or long-term reser
 
 ---
 
-### Who it's for
+## Who it's for
 
 - Households building emergency preparedness
 - Communities planning for disruptions
@@ -49,6 +49,6 @@ A compact nutrition bar designed for repeat daily consumption or long-term reser
 
 ---
 
-### Our mission
+## Our mission
 
 To make resilient nutrition affordable, scalable, and dependable—so access to food is less vulnerable to disruption.

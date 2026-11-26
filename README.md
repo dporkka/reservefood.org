@@ -18,7 +18,7 @@ The site provides information about Reserve Food's products, programs, investor 
 
 - **Static site generator:** [Hugo](https://gohugo.io/)
 - **Templating:** Go HTML templates
-- **Styling:** Plain CSS (no framework dependencies)
+- **Styling:** [Syntyr CSS](https://github.com/dporkka/syntyr-css) v0.3.0-alpha.4 (vendored core + semantic CSS) and a small Reserve Food brand stylesheet
 - **Hosting:** Deployable to any static host (Netlify, Cloudflare Pages, GitHub Pages, etc.)
 
 ---
@@ -72,7 +72,8 @@ reservefood.org/
 │       └── footer.html
 ├── static/
 │   └── css/
-│       └── main.css      # Site stylesheet
+│       ├── main.css      # Brand tokens and site-specific composition
+│       └── vendor/syntyr/ # Pinned MIT-licensed Syntyr CSS
 ├── hugo.toml             # Hugo configuration
 ├── PRD.md                # Product Requirements Document
 └── README.md             # This file
@@ -105,6 +106,21 @@ See [PRD.md](PRD.md) for the product roadmap and remaining tasks.
 
 &copy; Reserve Food. All rights reserved.
 
+## Syntyr styling
+
+The site uses the published Syntyr release, not the unreleased source candidate.
+Core provides the scoped reset, layout, focus, typography and controls;
+semantic mode styles native HTML rendered from Markdown. The local
+`main.css` overrides the public `--syn-*` tokens for the Reserve Food palette
+and keeps the reading-width layout and progressively enhanced navigation.
+There is no Tailwind, npm, Hugo module, CSS preprocessor or remote CSS dependency.
+
+The unmodified copies, MIT license, source commit and SHA-256 checksums are in
+[`static/css/vendor/syntyr/`](static/css/vendor/syntyr/README.md).
+Hugo builds offline with these committed files. Upgrade only by choosing a
+published release and following the vendoring instructions, then rerun the tests.
+The vendor files are not Reserve Food proprietary content.
+
 ## Portability checks
 
 The site can be served at a domain root or a nested deployment prefix. Build
@@ -115,10 +131,13 @@ hugo --minify --baseURL https://example.org/reserve/
 python3 -m unittest discover -s tests -v
 ```
 
-The tests build both root and subpath variants, resolve local links and assets,
-and check the sitemap URL and active navigation. The mobile navigation browser
-test is optional and uses developer-installed Playwright and Chromium; the
-rest of the checks require only Hugo and the Python standard library.
+The tests build both root and subpath variants, resolve local links, fragments
+and assets, and check the sitemap, active navigation and the vendor hashes.
+The optional Playwright/Chromium check exercises every page at 320, 390, 768
+and 1280 CSS pixels in both light and dark modes, checks keyboard skip
+navigation, mobile toggling with and without JavaScript, reflow, and primary
+button contrast. The non-browser checks require only Hugo and the Python
+standard library.
 Use `HUGO_BIN` to specify Hugo and set `CHROMIUM_BIN` to an installed
 Chromium executable to enable the browser check.
 The menu remains visible without JavaScript; JavaScript enhances it with a
