@@ -3,3 +3,6 @@ public/
 
 # Hugo lock file
 .hugo_build.lock
+
+# Optional Python verification output
+__pycache__/

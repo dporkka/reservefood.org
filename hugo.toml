@@ -1,6 +1,8 @@
 baseURL = 'https://reservefood.org'
-languageCode = 'en-us'
+locale = 'en-US'
 title = 'Reserve Food'
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
 
 [sitemap]
 changefreq = 'weekly'
@@ -16,35 +18,35 @@ plausibleDomain = 'reservefood.org'
 [menu]
 [[menu.main]]
 name = 'About'
-url = '/about/'
+pageRef = '/about'
 weight = 10
 
 [[menu.main]]
 name = 'Product'
-url = '/product/'
+pageRef = '/product'
 weight = 20
 
 [[menu.main]]
 name = 'Programs'
-url = '/programs/'
+pageRef = '/programs'
 weight = 30
 
 [[menu.main]]
 name = 'Governments & NGOs'
-url = '/governments-ngos/'
+pageRef = '/governments-ngos'
 weight = 40
 
 [[menu.main]]
 name = 'Investors'
-url = '/investors/'
+pageRef = '/investors'
 weight = 50
 
 [[menu.main]]
 name = 'FAQ'
-url = '/faq/'
+pageRef = '/faq'
 weight = 60
 
 [[menu.main]]
 name = 'Contact'
-url = '/contact/'
+pageRef = '/contact'
 weight = 70
