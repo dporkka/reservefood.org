@@ -133,6 +133,11 @@ python3 -m unittest discover -s tests -v
 
 The tests build both root and subpath variants, resolve local links, fragments
 and assets, and check the sitemap, active navigation and the vendor hashes.
+The test suite also compares complete output trees using two simulated build
+clocks ten years apart. The footer is intentionally timeless, avoiding an
+annual copyright-year edit or rebuild. The existing Pages build checks the
+vendored SHA-256 manifest before running Hugo; deployment privileges are
+limited to the deployment job.
 The optional Playwright/Chromium check exercises every page at 320, 390, 768
 and 1280 CSS pixels in both light and dark modes, checks keyboard skip
 navigation, mobile toggling with and without JavaScript, reflow, and primary
@@ -142,3 +147,22 @@ Use `HUGO_BIN` to specify Hugo and set `CHROMIUM_BIN` to an installed
 Chromium executable to enable the browser check.
 The menu remains visible without JavaScript; JavaScript enhances it with a
 collapsible mobile toggle.
+
+## Long-term preservation
+
+Keep a source archive, the exact pinned Hugo binary for your platform,
+and a static build together. On GNU/Linux, for an unchanged source
+checkout and a fixed production base URL:
+
+```sh
+(cd static/css/vendor/syntyr && sha256sum -c SHA256SUMS)
+hugo --minify --panicOnWarning --destination /tmp/reservefood-static
+tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner \
+  -cf /tmp/reservefood-static.tar -C /tmp/reservefood-static .
+sha256sum /tmp/reservefood-static.tar > /tmp/reservefood-static.tar.sha256
+```
+
+Build into a new output directory; only publish the generated static files.
+The archive can be served by an ordinary static HTTP server. Its links use
+the configured production base path; it is not a file:// site. Do not
+include credentials or other source-only files in the public archive.

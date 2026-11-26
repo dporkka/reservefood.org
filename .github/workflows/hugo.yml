@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: "pages"
@@ -22,6 +20,9 @@ jobs:
       - uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "0.170.0"
+      - name: Verify vendored Syntyr assets
+        working-directory: static/css/vendor/syntyr
+        run: sha256sum -c SHA256SUMS
       - name: Build
         run: hugo --minify --panicOnWarning
       - uses: actions/upload-pages-artifact@v3
@@ -29,6 +30,9 @@ jobs:
           path: ./public
 
   deploy:
+    permissions:
+      pages: write
+      id-token: write
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     environment:
       name: github-pages

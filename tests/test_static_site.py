@@ -58,9 +58,12 @@ def contrast_ratio(first, second):
     return (light + 0.05) / (dark + 0.05)
 
 
-def build(destination, base_url):
-    subprocess.run([HUGO, "--source", str(ROOT), "--destination", str(destination),
-                    "--baseURL", base_url, "--minify", "--panicOnWarning"], check=True)
+def build(destination, base_url, *, clock=None):
+    command = [HUGO, "--source", str(ROOT), "--destination", str(destination),
+               "--baseURL", base_url, "--minify", "--panicOnWarning"]
+    if clock:
+        command.extend(["--clock", clock])
+    subprocess.run(command, check=True)
 
 
 @unittest.skipUnless(HUGO, "Set HUGO_BIN or install Hugo")
@@ -112,6 +115,18 @@ class StaticSiteTests(unittest.TestCase):
                     if path == "contact/index.html":
                         self.assertEqual(parser.current, [prefix + "contact/"])
                 self.assertIn(base + "sitemap.xml", (output / "robots.txt").read_text())
+
+    def test_build_is_reproducible_across_clock_changes(self):
+        def content_hashes(output):
+            return {path.relative_to(output).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+                    for path in output.rglob("*") if path.is_file()}
+
+        with tempfile.TemporaryDirectory() as temp:
+            first, second = Path(temp) / "first", Path(temp) / "second"
+            base = "https://example.org/reserve/"
+            build(first, base, clock="2026-01-01T00:00:00Z")
+            build(second, base, clock="2036-01-01T00:00:00Z")
+            self.assertEqual(content_hashes(first), content_hashes(second))
 
     def test_mobile_nav_with_and_without_javascript(self):
         try:
